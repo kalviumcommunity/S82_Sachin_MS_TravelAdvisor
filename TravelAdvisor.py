@@ -6,24 +6,23 @@ genai.configure(api_key=config.GOOGLE_API_KEY)
 
 model = genai.GenerativeModel("gemini-1.5-flash")
 
-user_prompt = """
-Plan a 5-day budget-friendly trip to Italy in October.
-The traveler loves history and food. Respond in JSON.
+def ask_model(prompt):
+    response = model.generate_content(prompt)
 
-Think step by step:
-1. Analyze the travel month (October) and suggest suitable cities.
-2. Consider the budget and how it affects travel style.
-3. Pick activities related to history and food.
-4. Allocate activities across 5 days logically.
-5. Estimate costs, bookings, and tips.
-Finally, present the output in this JSON structure:
-1) Destination(s)
-2) Day-by-day Plan
-3) Costs (rough estimates)
-4) Booking Tips
-5) Local Do's & Don'ts
-"""
 
-chat = model.start_chat()
-response = chat.send_message(user_prompt)
-print(response.text)
+    print("\nModel Response:\n", response.text)
+
+
+    if hasattr(response, "usage_metadata"):
+        tokens_in = response.usage_metadata.prompt_token_count
+        tokens_out = response.usage_metadata.candidates_token_count
+        total = response.usage_metadata.total_token_count
+
+        print(f"\nToken Usage: Input={tokens_in}, Output={tokens_out}, Total={total}\n")
+    else:
+        print("\n Token usage metadata not available in this SDK.\n")
+
+    return response
+
+
+ask_model("Plan a 3-day trip to Rome focusing on history and food.")
