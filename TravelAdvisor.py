@@ -26,6 +26,24 @@ system_prompt = (
     "  'Local Do\\'s & Don\\'ts': 'Do learn Italian phrases; Don’t eat near tourist traps'\n"
     "}\n\n"
     
+    
+    "Example 2 Request: Plan a 4-day budget trip to Bangkok in July. "
+    "The traveler enjoys nightlife and street food.\n"
+    "Example 2 Response (JSON):\n"
+    "{\n"
+    "  'Destination(s)': 'Bangkok',\n"
+    "  'Day-by-day Plan': [\n"
+    "    'Day 1: Grand Palace, Wat Pho, street food dinner at Yaowarat',\n"
+    "    'Day 2: Floating Market tour, Asiatique Riverfront, Thai massage',\n"
+    "    'Day 3: Chatuchak Market shopping, Jim Thompson House, rooftop bar night',\n"
+    "    'Day 4: Relax at Lumphini Park, souvenir shopping, departure'\n"
+    "  ],\n"
+    "  'Costs (rough estimates)': '$500–$700',\n"
+    "  'Booking Tips': 'Use BTS Skytrain for cheap travel, book accommodation near Sukhumvit',\n"
+    "  'Local Do\\'s & Don\\'ts': 'Do bargain at markets; Don’t disrespect temples'\n"
+    "}\n\n"
+
+
     "Now follow this style for any new request."
 )
 
