@@ -18,7 +18,7 @@ system_prompt = (
     "In Json format with no comments"
 )
 
-user_prompt = "Plan a 5-day mid-budget trip to Italy in October. We love history and food.We are from India"
+user_prompt = "Plan a 5-day mid-budget trip to Japan in October. We love history and food"
 
 chat = model.start_chat(history=[
     {"role": "user", "parts": [system_prompt]}  
