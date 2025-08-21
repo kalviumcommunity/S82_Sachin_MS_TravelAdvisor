@@ -4,7 +4,12 @@ import google.generativeai as genai
 genai.configure(api_key=config.GOOGLE_API_KEY)
 
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel(
+    "gemini-1.5-flash",
+    generation_config={
+        "temperature": 0.9 
+    }
+)
 
 def ask_model(prompt):
     response = model.generate_content(prompt)
