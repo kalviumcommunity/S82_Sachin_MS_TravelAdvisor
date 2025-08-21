@@ -8,7 +8,8 @@ model = genai.GenerativeModel(
     "gemini-1.5-flash",
     generation_config={
         "temperature": 0.9,
-        "top_p":0.9
+        "top_p":0.9,
+        "top_k":50,
     }
 )
 
